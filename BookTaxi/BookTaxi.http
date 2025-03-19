@@ -1,0 +1,6 @@
+@BookTaxi_HostAddress = http://localhost:5120
+
+GET {{BookTaxi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
