@@ -90,7 +90,7 @@ public class ClientAccountsController : ControllerBase
         }
     }
 
-    [HttpGet("{account_id}/AllDrivers")]
+    [HttpGet("account_id/AllDrivers")]
     public async Task<IActionResult> ClientAllDrivers()
     {
         try

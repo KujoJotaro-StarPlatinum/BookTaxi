@@ -59,7 +59,7 @@ public class ClientService
             throw new Exception("User not found in base");
         }
         var verifyResult = await _smsService.VerifyCode(model.PhoneNumber, model.Code);
-        var sms = await _smsRepository.GetByPhoneNumber(model.PhoneNumber);
+        var sms = await _smsRepository.GetUserByPhoneNumber(model.PhoneNumber);
         if (sms == null)
         {
             throw new Exception("Not found");
@@ -75,7 +75,7 @@ public class ClientService
             throw new ArgumentNullException(nameof(model), "Model cannot be null.");
         }
 
-        var sms = await _smsRepository.GetByPhoneNumber(model.PhoneNumber);
+        var sms = await _smsRepository.GetUserByPhoneNumber(model.PhoneNumber);
         if (sms == null)
         {
             throw new InvalidOperationException("User phone is invalid.");
@@ -102,7 +102,7 @@ public class ClientService
         var verifyResult = await _smsService.VerifyCode(model.PhoneNumber, model.Code);
 
         // Получаем запись SMS по номеру телефона
-        var sms = await _smsRepository.GetByPhoneNumber(model.PhoneNumber);
+        var sms = await _smsRepository.GetUserByPhoneNumber(model.PhoneNumber);
         if (sms == null)
         {
             throw new InvalidOperationException("SMS record not found.");

@@ -9,5 +9,5 @@ public interface ISmsRepository
     Task<Sms> DeteleSms(Sms sms);
     Task<Sms> GetById(int Id);
     Task<Sms> Update(Sms sms);
-    Task<Sms> GetByPhoneNumber(string phoneNumber);
+    Task<Sms> GetUserByPhoneNumber(string phoneNumber);
 }
