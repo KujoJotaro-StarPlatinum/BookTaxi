@@ -46,8 +46,7 @@ public class DriverAccountsController : ControllerBase
         }
     }
 
-    [Authorize(Roles = "admin,driver")]
-    [HttpGet("account_id/profile")]
+    [HttpGet("profile")]
     public async Task<IActionResult> DriverProfile(Guid id)
     {
         try

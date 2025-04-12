@@ -45,13 +45,12 @@ public class AdminAccountsController : ControllerBase
         }
     }
 
-    [HttpGet("{accountId}/profile")]
-    [Authorize(Roles = "admin")]
-    public async Task<IActionResult> AdminProfile(Guid accountId)
+    [HttpGet("profile")]    
+    public async Task<IActionResult> AdminProfile(Guid Id)
     {
         try
         {
-            var user = await _adminService.AdminProfile(accountId);
+            var user = await _adminService.AdminProfile(Id);
             return Ok(user);
         }
         catch (Exception ex)

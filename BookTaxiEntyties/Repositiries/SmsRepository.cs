@@ -40,7 +40,7 @@ public class SmsRepository : ISmsRepository
         return sms;
     }
 
-    public async Task<Sms> GetByPhoneNumber(string phoneNumber)
+    public async Task<Sms> GetUserByPhoneNumber(string phoneNumber)
     {
         var sms = await _context.Sms.FirstOrDefaultAsync(_ => _.PhoneNumber == phoneNumber);
         if (sms is null)

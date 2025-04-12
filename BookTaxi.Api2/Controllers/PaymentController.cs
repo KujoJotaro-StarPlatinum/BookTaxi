@@ -29,7 +29,7 @@ public class PaymentController : ControllerBase
         }
     }
 
-    [HttpGet("payments/{payment_id}")]
+    [HttpGet("payment-by-id")]
     public async Task<IActionResult> GetPaymentById(int id)
     {
         try

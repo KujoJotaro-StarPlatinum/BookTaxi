@@ -113,14 +113,9 @@ public class AdminService
         }
     }
 
-    public async Task<UserDto> AdminProfile(Guid id)
+    public async Task<UserDto> AdminProfile(Guid Id)
     {
-        var user = await _userRepository.GetUserById(id);
-        if (user == null)
-        {
-            throw new ArgumentException("User not found");
-        }
-
+        var user = await _userRepository.GetUserById(Id);
         return user.ParseToDto();
     }
 

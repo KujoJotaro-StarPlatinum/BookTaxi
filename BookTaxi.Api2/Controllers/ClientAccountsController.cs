@@ -76,7 +76,7 @@ public class ClientAccountsController : ControllerBase
         }
     }
 
-    [HttpGet("{account_id}/profile")]
+    [HttpGet("profile")]
     public async Task<IActionResult> ClientProfile(Guid id)
     {
         try
@@ -90,7 +90,7 @@ public class ClientAccountsController : ControllerBase
         }
     }
 
-    [HttpGet("account_id/AllDrivers")]
+    [HttpGet("{account_id}/AllDrivers")]
     public async Task<IActionResult> ClientAllDrivers()
     {
         try
